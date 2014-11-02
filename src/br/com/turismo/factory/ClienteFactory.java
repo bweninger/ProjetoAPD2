@@ -10,16 +10,25 @@ import br.com.turismo.model.Cliente;
  *
  * @author BWeninger
  */
-public class ClienteFactory extends EntityFactory<Cliente> {
+public class ClienteFactory extends AbstractEntityFactory<Cliente> {
     
-    private static final ClienteFactory instance = new ClienteFactory();
+    private static final ClienteFactory INSTANCE = new ClienteFactory();
     
     private ClienteFactory(){
         super(Cliente.class);
     }
     
     public static ClienteFactory getInstance(){
-        return instance;
+        return INSTANCE;
+    }
+    
+    public Cliente buscarClientePorCPF(String cpf){
+        for(Cliente cliente : this.entidades){
+            if(cliente.getCpf().equals(cpf)){
+                return cliente;
+            }
+        }
+        return null;
     }
     
 }

@@ -13,8 +13,7 @@ public class Cliente {
     private String nome;
     private String cpf;
 
-    private Cliente(){
-        
+    public Cliente(){        
     }
     
     public String getNome() {

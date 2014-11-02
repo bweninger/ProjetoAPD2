@@ -11,7 +11,7 @@ package br.com.turismo.menu;
 public class ReservaAssentoAcao extends Acao{
 
     @Override
-    public void selecionar() {
+    public Menu selecionar() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     

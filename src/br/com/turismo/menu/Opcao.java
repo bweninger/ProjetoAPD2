@@ -29,5 +29,5 @@ public abstract class Opcao {
         this.descricao = descricao;
     }
 
-    public abstract void selecionar();
+    public abstract Menu selecionar();
 }

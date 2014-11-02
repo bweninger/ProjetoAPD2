@@ -16,23 +16,30 @@ public class Menu extends Opcao{
     protected List<Opcao> opcoes;    
     
     @Override
-    public void selecionar(){
-        this.exibir();
+    public Menu selecionar(){        
+        return this;
     }
             
     public void exibir(){
         for(Opcao opcao : this.opcoes){
             System.out.println(opcao.getIdOpcao() + ". " + opcao.getDescricao());
         }
+        System.out.println("9. Retornar ao menu anterior");
         System.out.println("0. Sair");
     }
     
-    public void tratarSelecao(int indice){
+    public Menu tratarSelecao(int indice){
         for(Opcao opcao : this.opcoes){
             if(opcao.getIdOpcao() == indice){
-                opcao.selecionar();
+                Menu result = opcao.selecionar();
+                if(result == null){
+                    return this;
+                }else{
+                    return result;
+                }
             }
         }
+        return null;
     }
     
     public void adicionarOpcao(Opcao opcao){

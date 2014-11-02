@@ -13,20 +13,21 @@ import java.util.List;
  *
  * @author BWeninger
  */
-public abstract class EntityFactory<T> {
+public abstract class AbstractEntityFactory<T> {
     
     private Class<T> clazz;
-    private List<T> entidades;
+    protected List<T> entidades;
     
-    protected EntityFactory(Class<T> clazz){        
+    protected AbstractEntityFactory(Class<T> clazz){        
         this.clazz = clazz;
         entidades = new ArrayList<T>();
     }
     
-    public T criar() throws InstantiationException, IllegalAccessException{
+    public T criar() throws InstantiationException, IllegalAccessException, NoSuchMethodException{
         if(entidades == null){
             entidades = new ArrayList<T>();
         }
+        clazz.getDeclaredConstructors()[0].setAccessible(true);
         T t = clazz.newInstance();
         entidades.add(t);
         return t;        

@@ -2,14 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.turismo.menu;
+package br.com.turismo.model;
 
 /**
  *
  * @author BWeninger
  */
-public abstract class Acao extends Opcao {
-
-    @Override
-    public abstract Menu selecionar(); 
+public enum Classe {
+    
+    ECONOMICA, EXECUTIVA, PRIMEIRA_CLASSE;
+    
 }

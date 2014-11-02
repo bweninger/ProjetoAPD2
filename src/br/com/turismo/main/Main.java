@@ -12,18 +12,15 @@ import java.util.Scanner;
  * @author BWeninger
  */
 public class Main {
-    
+
     private static int opcaoSelecionada = -1;
-    
+
     public static void main(String[] args) {
-        
-        AgenciaTurismo.getInstance().iniciar();  
-        
-        while(opcaoSelecionada != 0){
-            Scanner sc = new Scanner(System.in);
-            opcaoSelecionada = sc.nextInt();
+
+        while (opcaoSelecionada != 0) {
+            AgenciaTurismo.getInstance().iniciar();
+            opcaoSelecionada = Integer.parseInt(AgenciaTurismo.getInstance().lerDados());
             AgenciaTurismo.getInstance().tratarOpcaoSelecionada(opcaoSelecionada);
-        }       
+        }
     }
-    
 }
