@@ -31,7 +31,7 @@ public class Quarto {
 
     @Override
     public String toString() {
-        return this.identificador + " - " + this.tipoQuarto.name() + " (R$ " + this.tipoQuarto.getPreco() + ")";
+        return this.identificador + " - " + this.tipoQuarto.name() + " (R$ " + this.tipoQuarto.getPreco() + "/noite)";
     }
     
     

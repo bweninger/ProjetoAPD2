@@ -26,7 +26,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             Cliente c = ClienteFactory.getInstance().criar();
-            c.setNome("Bruno Hering Viadao");
+            c.setNome("Bruno Weninger");
             c.setCpf("242424");
             
             c = ClienteFactory.getInstance().criar();

@@ -7,12 +7,10 @@ package br.com.turismo.menu;
 import br.com.turismo.factory.ClienteFactory;
 import br.com.turismo.factory.HotelFactory;
 import br.com.turismo.factory.PacoteFactory;
-import br.com.turismo.factory.ReservaHotelFactory;
 import br.com.turismo.model.Cliente;
 import br.com.turismo.model.Hotel;
 import br.com.turismo.model.Pacote;
 import br.com.turismo.model.Quarto;
-import br.com.turismo.model.ReservaQuarto;
 import br.com.turismo.sistema.AgenciaTurismo;
 import java.util.List;
 import java.util.Scanner;
@@ -100,7 +98,7 @@ public class ReservarQuartoAcao extends Acao {
             }
 
             opcao = Integer.parseInt(AgenciaTurismo.getInstance().lerDados());
-            result = hotel.getQuartos().get(opcao);
+            result = hotel.getQuartos().get(opcao - 1);
         }
         return result;
     }

@@ -21,7 +21,6 @@ public class CadastrarClienteAcao extends Acao {
         ClienteFactory factory = ClienteFactory.getInstance();
         Cliente cliente = null;
         try {
-
             cliente = factory.criar();
         } catch (InstantiationException ex) {
             Logger.getLogger(CadastrarClienteAcao.class.getName()).log(Level.SEVERE, null, ex);
