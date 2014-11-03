@@ -4,6 +4,8 @@
  */
 package br.com.turismo.model;
 
+import java.util.Date;
+
 /**
  *
  * @author BWeninger
@@ -11,6 +13,30 @@ package br.com.turismo.model;
 public class ReservaQuarto extends Reserva {
 
     private Quarto quarto;
+
+    public Date getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(Date dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public Date getDataFim() {
+        return dataFim;
+    }
+
+    public void setDataFim(Date dataFim) {
+        this.dataFim = dataFim;
+    }
+
+    public StatusReserva getStatusReserva() {
+        return statusReserva;
+    }
+
+    public void setStatusReserva(StatusReserva statusReserva) {
+        this.statusReserva = statusReserva;
+    }    
 
     @Override
     public String reservar() {

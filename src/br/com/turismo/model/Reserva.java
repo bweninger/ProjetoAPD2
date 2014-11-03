@@ -12,7 +12,9 @@ import java.util.Date;
  */
 public abstract class Reserva {
     
-    protected Date dataHora;
+    protected Date dataInicio;
+    
+    protected Date dataFim;
     
     protected StatusReserva statusReserva;
     

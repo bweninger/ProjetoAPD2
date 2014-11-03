@@ -54,7 +54,7 @@ public class ReservarQuartoAcao extends Acao {
             Hotel hotel = selecionarHotel();
             Quarto quarto = selecionarQuarto(hotel);
             
-            System.out.println("Quantas nov");
+            System.out.println("Quantas diárias você deseja?");
 
         } catch (InstantiationException ex) {
             Logger.getLogger(ReservarQuartoAcao.class.getName()).log(Level.SEVERE, null, ex);
