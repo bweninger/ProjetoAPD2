@@ -13,6 +13,8 @@ import java.util.Date;
 public class ReservaQuarto extends Reserva {
 
     private Quarto quarto;
+    protected Date dataInicio;
+    protected Date dataFim;
 
     public Date getDataInicio() {
         return dataInicio;
@@ -36,7 +38,7 @@ public class ReservaQuarto extends Reserva {
 
     public void setStatusReserva(StatusReserva statusReserva) {
         this.statusReserva = statusReserva;
-    }    
+    }
 
     @Override
     public String reservar() {
