@@ -5,7 +5,6 @@
 package br.com.turismo.factory;
 
 import br.com.turismo.model.Hotel;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,6 +25,14 @@ public class HotelFactory extends AbstractEntityFactory<Hotel> {
     
     public List<Hotel> buscarHoteis(){
         return this.entidades;
+    }
+    
+    public Hotel buscarHotelPorIndice(int i){
+        if(i > entidades.size() || i <= 0){
+            return null;
+        }else{
+            return entidades.get(i - 1);
+        }
     }
     
     /*public Hotel buscarHotelPorLocal(String cpf){

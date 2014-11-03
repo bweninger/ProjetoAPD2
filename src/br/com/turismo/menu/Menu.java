@@ -21,6 +21,7 @@ public class Menu extends Opcao{
     }
             
     public void exibir(){
+        System.out.println(this.getDescricao());
         for(Opcao opcao : this.opcoes){
             System.out.println(opcao.getIdOpcao() + ". " + opcao.getDescricao());
         }

@@ -5,10 +5,8 @@
 package br.com.turismo.menu;
 
 import br.com.turismo.factory.ClienteFactory;
-import br.com.turismo.factory.AbstractEntityFactory;
 import br.com.turismo.model.Cliente;
 import br.com.turismo.sistema.AgenciaTurismo;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

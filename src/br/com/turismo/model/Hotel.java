@@ -4,6 +4,7 @@
  */
 package br.com.turismo.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +13,7 @@ import java.util.List;
  */
 public class Hotel {
     
+    private String nome;
     private String endereco;
     private String cep;
     private String cidade;
@@ -63,7 +65,18 @@ public class Hotel {
         return quartos;
     }
 
-    public void setQuartos(List<Quarto> quartos) {
-        this.quartos = quartos;
+    public void adicionarQuarto(Quarto q){
+        if(this.quartos == null){
+            this.quartos = new ArrayList<Quarto>();
+        }
+        quartos.add(q);
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }    
 }

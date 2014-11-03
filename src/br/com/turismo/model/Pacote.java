@@ -4,35 +4,33 @@
  */
 package br.com.turismo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author BWeninger
  */
 public class Pacote {
-    
+
     private Cliente cliente;
-    
     private String eTicket;
+    private List<Reserva> reservasQuarto;
+    private List<Reserva> passagensAereas;
+
+    public void adicionarReservaQuarto(ReservaQuarto reserva) {
+        if (this.reservasQuarto == null) {
+            this.reservasQuarto = new ArrayList<Reserva>();
+        }
+        reservasQuarto.add(reserva);
+    }
     
-    private Reserva reservaQuarto;
-    
-    private Reserva passagemAerea;
-
-    public Reserva getReservaQuarto() {
-        return reservaQuarto;
+    public void adicionarPassagemAerea(PassagemAerea passagem) {
+        if (this.passagensAereas == null) {
+            this.passagensAereas = new ArrayList<Reserva>();
+        }
+        passagensAereas.add(passagem);
     }
-
-    public void setReservaQuarto(Reserva reservaQuarto) {
-        this.reservaQuarto = reservaQuarto;
-    }
-
-    public Reserva getPassagemAerea() {
-        return passagemAerea;
-    }
-
-    public void setPassagemAerea(Reserva passagemAerea) {
-        this.passagemAerea = passagemAerea;
-    }    
 
     public String geteTicket() {
         return eTicket;
@@ -48,5 +46,5 @@ public class Pacote {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }    
+    }
 }

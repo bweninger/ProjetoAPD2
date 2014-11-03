@@ -8,7 +8,7 @@ package br.com.turismo.menu;
  *
  * @author BWeninger
  */
-public class ReservaAssentoAcao extends Acao{
+public class ReservarAssentoAcao extends Acao{
 
     @Override
     public Menu selecionar() {

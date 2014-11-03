@@ -4,7 +4,6 @@
  */
 package br.com.turismo.factory;
 
-import br.com.turismo.model.Reserva;
 import br.com.turismo.model.ReservaQuarto;
 
 /**

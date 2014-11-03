@@ -5,12 +5,16 @@
 package br.com.turismo.menu;
 
 import br.com.turismo.factory.ClienteFactory;
+import br.com.turismo.factory.HotelFactory;
 import br.com.turismo.factory.PacoteFactory;
 import br.com.turismo.factory.ReservaHotelFactory;
 import br.com.turismo.model.Cliente;
+import br.com.turismo.model.Hotel;
 import br.com.turismo.model.Pacote;
-import br.com.turismo.model.Reserva;
+import br.com.turismo.model.Quarto;
 import br.com.turismo.model.ReservaQuarto;
+import br.com.turismo.sistema.AgenciaTurismo;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,12 +48,14 @@ public class ReservarQuartoAcao extends Acao {
         try {
             if (pkg == null) {
                 pkg = PacoteFactory.getInstance().criar();
+                pkg.setCliente(c);
             }
 
-            pkg.setCliente(c);            
-            ReservaQuarto reserva = ReservaHotelFactory.getInstance().criar();
-            pkg.setReservaQuarto(reserva);
-            reserva.reservar();
+            Hotel hotel = selecionarHotel();
+            Quarto quarto = selecionarQuarto(hotel);
+            
+            System.out.println("Quantas nov");
+
         } catch (InstantiationException ex) {
             Logger.getLogger(ReservarQuartoAcao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
@@ -59,6 +65,43 @@ public class ReservarQuartoAcao extends Acao {
         }
 
         return null;
+    }
 
+    private Hotel selecionarHotel() {
+        List<Hotel> hoteis = HotelFactory.getInstance().buscarHoteis();
+        Integer opcao = -1;
+        Integer nroTentativas = 0;
+        Hotel h = null;
+        while (h == null) {
+            if (nroTentativas > 0) {
+                System.out.println("Opção inexistente. ");
+            }
+            System.out.println("Selecione seu hotel");
+            for (Hotel hotel : hoteis) {
+                System.out.println((hoteis.indexOf(hotel) + 1) + ". " + hotel.getNome());
+            }
+
+            opcao = Integer.parseInt(AgenciaTurismo.getInstance().lerDados());
+            h = HotelFactory.getInstance().buscarHotelPorIndice(opcao);
+            nroTentativas++;
+        }
+
+        return h;
+    }
+
+    private Quarto selecionarQuarto(Hotel hotel) {
+        Quarto result = null;
+        Integer opcao = -1;
+        Integer nroTentativas = 0;
+        while (result == null) {
+            System.out.println("Selecione o quarto que deseja: ");
+            for (Quarto q : hotel.getQuartos()) {
+                System.out.println((hotel.getQuartos().indexOf(q) + 1) + "." + q.toString());
+            }
+
+            opcao = Integer.parseInt(AgenciaTurismo.getInstance().lerDados());
+            result = hotel.getQuartos().get(opcao);
+        }
+        return result;
     }
 }

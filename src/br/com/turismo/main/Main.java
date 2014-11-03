@@ -5,7 +5,6 @@
 package br.com.turismo.main;
 
 import br.com.turismo.sistema.AgenciaTurismo;
-import java.util.Scanner;
 
 /**
  *
