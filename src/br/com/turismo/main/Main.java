@@ -15,6 +15,7 @@ import br.com.turismo.model.Quarto;
 import br.com.turismo.model.TipoQuarto;
 import br.com.turismo.model.Voo;
 import java.util.Date;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,6 +28,8 @@ public class Main {
     private static int opcaoSelecionada = -1;
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
         try {
             Cliente c = ClienteFactory.getInstance().criar();
             c.setNome("Bruno Hering Viadao");
