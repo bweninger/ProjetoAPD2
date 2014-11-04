@@ -5,6 +5,7 @@
 package br.com.turismo.factory;
 
 import br.com.turismo.model.Voo;
+import java.util.List;
 
 /**
  *
@@ -22,6 +23,16 @@ public class VooFactory extends AbstractEntityFactory<Voo> {
         return INSTANCE;
     }
     
+    public List<Voo> buscarVoos(){
+        return this.entidades;
+    }
     
+    public Voo buscarVooPorIndice(int i){
+        if(i > entidades.size() || i <= 0){
+            return null;
+        }else{
+            return entidades.get(i - 1);
+        }
+    }
     
 }

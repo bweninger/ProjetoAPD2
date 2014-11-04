@@ -8,10 +8,13 @@ import br.com.turismo.factory.ClienteFactory;
 import br.com.turismo.sistema.AgenciaTurismo;
 import br.com.turismo.factory.HotelFactory;
 import br.com.turismo.factory.QuartoFactory;
+import br.com.turismo.factory.VooFactory;
 import br.com.turismo.model.Cliente;
 import br.com.turismo.model.Hotel;
 import br.com.turismo.model.Quarto;
 import br.com.turismo.model.TipoQuarto;
+import br.com.turismo.model.Voo;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -26,7 +29,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             Cliente c = ClienteFactory.getInstance().criar();
-            c.setNome("Bruno Weninger");
+            c.setNome("Bruno Hering Viadao");
             c.setCpf("242424");
             
             c = ClienteFactory.getInstance().criar();
@@ -36,6 +39,21 @@ public class Main {
             c = ClienteFactory.getInstance().criar();
             c.setNome("Bruno Novinho");
             c.setCpf("123456");
+            
+            Voo v = VooFactory.getInstance().criar();
+            v.setOrigem("Sao Paulo");
+            v.setDestino("Havaii");
+            v.setData(new Date());
+            
+            v = VooFactory.getInstance().criar();
+            v.setOrigem("Bahia");
+            v.setDestino("EUA");
+            v.setData(new Date());
+            
+            v = VooFactory.getInstance().criar();
+            v.setOrigem("Rio de Janeiro");
+            v.setDestino("Japao");
+            v.setData(new Date());
             
             Hotel h = HotelFactory.getInstance().criar();
             h.setNome("Hilton");
